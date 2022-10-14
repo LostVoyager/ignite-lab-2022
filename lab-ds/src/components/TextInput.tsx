@@ -6,7 +6,7 @@ export interface TextInputRootProps extends InputHTMLAttributes<HTMLInputElement
   children: ReactNode;
 }
 export function TextInputRoot(props: TextInputRootProps) {
-  let className = clsx('flex items-center gap-3 py-4 px-3 rounded bg-gray-800 focus-within:ring-2 ring-cyan-300', 
+  let className = clsx('flex items-center gap-3 h-12 py-4 px-3 rounded bg-gray-800 focus-within:ring-2 ring-cyan-300', 
     {
     
     }
