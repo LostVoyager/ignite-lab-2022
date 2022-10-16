@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 4000s 4000s, color 4000s 4000s;
+  }
