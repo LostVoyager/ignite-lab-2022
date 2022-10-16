@@ -6,7 +6,7 @@ export default {
   title: 'Components/Heading',
   component: Heading,
   args: {
-    children: 'Lorem ipsum',
+    children: 'Hello World',
     size: 'md',
   },
   argTypes: {
