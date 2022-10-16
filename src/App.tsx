@@ -21,7 +21,7 @@ export function App() {
       </header>
 
       <form className='flex flex-col items-stretch gap-4'>
-        <label htmlFor="email" className='flex flex-col gap-3 w-full max-w-lg'>
+        <label htmlFor='email' className='flex flex-col gap-3 w-full max-w-lg'>
           <Text className='font-semibold'>E-mail: </Text>
           <TextInput.Root>
             <TextInput.Icon>
@@ -31,7 +31,7 @@ export function App() {
           </TextInput.Root>
         </label>
 
-        <label htmlFor="password" className='flex flex-col gap-3 w-full max-w-lg'>
+        <label htmlFor='password' className='flex flex-col gap-3 w-full max-w-lg'>
           <Text className='font-semibold'>Password: </Text>
           <TextInput.Root>
             <TextInput.Icon>
@@ -48,8 +48,17 @@ export function App() {
         </label>
         
         <Button type='submit' className='mt-4'>Login</Button>
-
+        
       </form>
+
+      <footer className='flex flex-col items-center gap-4 '>
+          <Text asChild size='sm'>
+            <a href='' className='text-gray-400 underline hover:text-gray-200'>Forgot your password?</a>
+          </Text>
+          <Text asChild size='sm'>
+            <a href='' className='text-gray-400 underline hover:text-gray-200'>Register a new account</a>
+          </Text>
+      </footer>
     </div>
   )
 }
