@@ -22,7 +22,7 @@ module.exports = {
   ],
   viteFinal: (config, {configType}) => {
     if (configType === 'PRODUCTION'){
-      config.base = '/storybook-react-login-screen';
+      config.base = '/storybook-react-login-screen/';
     }
     return config;
   }
