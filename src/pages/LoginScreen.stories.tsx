@@ -5,7 +5,7 @@ import {LoginScreen} from './LoginScreen'
 import {rest} from 'msw';
 
 export default {
-  title: 'Pages/LoginScreen',
+  title: 'Pages/Login Screen',
   component: LoginScreen,
   args: {
   },

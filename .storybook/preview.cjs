@@ -20,6 +20,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  storySort: {
+    method: 'alphabetical',
+    order: ['Pages', ['Login Screen'], 'React Components'], 
+    locales: 'en-US',
+  },
   docs: {
     theme: themes.dark,
   }
