@@ -1,6 +1,6 @@
 # Storybook-React Login Screen
 
-- A simple login screen front-end developed using React, TailwindCSS and TypeScript;
+- A simple login screen front-end developed using React, RadixUI, TailwindCSS, clsx, Phosphor Icons and TypeScript;
 - Component documentation using Storybook;
 - Accessibility testing using a11y addon for Storybook;
 - Unit testing for the page using the Jest and MSW (Mock Service Worker) addons for Storybook. 
