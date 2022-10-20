@@ -12,6 +12,12 @@ export default {
   argTypes: {
     
   },
+} as Meta
+
+export const Default: StoryObj = {
+};
+
+export const LoggedIn: StoryObj = {
   parameters:{
     msw: {
       handlers: [
@@ -24,12 +30,6 @@ export default {
       ],
     },
   },
-} as Meta
-
-export const Default: StoryObj = {
-};
-
-export const LoggedIn: StoryObj = {
   play: async ({canvasElement}) => {
     const canvas = within(canvasElement);
     userEvent.type(canvas.getByTestId('email'), 'email@address.com');
@@ -37,7 +37,7 @@ export const LoggedIn: StoryObj = {
     userEvent.click(canvas.getByTestId('submitButton'));
 
     await waitFor(()=>{
-      expect(canvas.getByText('User Logged In')).toBeInTheDocument();
+      expect(canvas.getByText('Logout')).toBeInTheDocument();
     })
   }
 };
