@@ -27,6 +27,9 @@ export default {
 } as Meta
 
 export const Default: StoryObj = {
+};
+
+export const LoggedIn: StoryObj = {
   play: async ({canvasElement}) => {
     const canvas = within(canvasElement);
     userEvent.type(canvas.getByTestId('email'), 'email@address.com');

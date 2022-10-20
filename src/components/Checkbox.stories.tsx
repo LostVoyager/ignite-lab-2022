@@ -4,7 +4,7 @@ import {Checkbox, CheckboxProps} from './Checkbox'
 import { Text } from './Text';
 
 export default {
-  title: 'Components/Checkbox',
+  title: 'React Components/Checkbox',
   component: Checkbox,
   args: {
 

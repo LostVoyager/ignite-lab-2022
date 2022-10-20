@@ -3,7 +3,7 @@ import {Meta, StoryObj} from '@storybook/react'
 import {Button, ButtonProps} from './Button'
 
 export default {
-  title: 'Components/Button',
+  title: 'React Components/Button',
   component: Button,
   args: {
     children: 'Do something',
