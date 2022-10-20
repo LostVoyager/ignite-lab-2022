@@ -9,20 +9,31 @@ import { FormEvent, useState } from "react";
 import axios from "axios";
 
 export function LoginScreen() {
-  const [isUserLoggedIn, setUserLoggedIn] = useState(false);
+  const [userLoggedIn, setUserLoggedIn] = useState('');
 
   async function handleLogin(event: FormEvent){
     event.preventDefault();
-
+    let input = event.currentTarget.getElementsByTagName('input');
     await axios.post('sessions', {
-      email: 'email@address.com',
-      password: 'password',
+      email: input.namedItem('email')!.value,
+      password: input.namedItem('password')!.value,
     })
-    setUserLoggedIn(true);
+    setUserLoggedIn(input.namedItem('email')!.value);
   }
   return (
+    
+
     <div className='h-screen w-screen bg-gray-900 flex flex-col gap-8 items-center justify-center text-gray-100'>
-      {isUserLoggedIn && <Text>User Logged In </Text>}
+      {userLoggedIn ? 
+      <>
+      <div className='flex flex-col items-stretch'>
+        <Text>User: <b className="text-cyan-300">{userLoggedIn}</b> </Text>
+        <Button onClick={() => setUserLoggedIn('')} id='backButton' data-testid='backButton' className='mt-4'>Logout</Button>
+      </div>
+      
+      </>
+      
+      : <>
       <header className='flex flex-col items-center'>
         <Logo/>
         <Heading size='lg' className='mt-4'>
@@ -40,7 +51,7 @@ export function LoginScreen() {
             <TextInput.Icon>
               <Envelope/>
             </TextInput.Icon>
-            <TextInput.Input type='email' id='email' data-testid='email' placeholder='email@address.com'/>
+            <TextInput.Input type='email' id='email' required data-testid='email' placeholder='email@address.com'/>
           </TextInput.Root>
         </label>
 
@@ -50,7 +61,7 @@ export function LoginScreen() {
             <TextInput.Icon>
               <Lock/>
             </TextInput.Icon>
-            <TextInput.Input type='password' id='password' data-testid='password' placeholder='********'/>
+            <TextInput.Input type='password' id='password' required data-testid='password' placeholder='********'/>
           </TextInput.Root>
         </label>
 
@@ -67,12 +78,13 @@ export function LoginScreen() {
 
       <footer className='flex flex-col items-center gap-4 '>
           <Text asChild size='sm'>
-            <a href='' className='text-gray-400 underline hover:text-gray-200'>Forgot your password?</a>
+            <a href='#password' className='text-gray-400 underline hover:text-gray-200'>Forgot your password?</a>
           </Text>
           <Text asChild size='sm'>
-            <a href='' className='text-gray-400 underline hover:text-gray-200'>Register a new account</a>
+            <a href='#email' className='text-gray-400 underline hover:text-gray-200'>Register a new account</a>
           </Text>
       </footer>
+      </>}
     </div>
   )
 }
