@@ -10,10 +10,9 @@ let options = {
 };
 if (location.hostname === "lostvoyager.github.io") {
   options.serviceWorker = {
-      url: "/storybook-react-login-screen/mockServiceWorker.js",
-    };
+    url: "/storybook-react-login-screen/mockServiceWorker.js",
   };
-}
+};
 initialize(options);
 
 // Provide the MSW addon decorator globally
