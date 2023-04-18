@@ -5,12 +5,15 @@ import '../src/styles/global.css'
 import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 // Initialize MSW
-const options = {
+let options = {
   onUnhandledRequest: "bypass",
-  serviceWorker: {
-    url: "./mockServiceWorker.js",
-  },
 };
+if (location.hostname === "lostvoyager.github.io") {
+  options.serviceWorker = {
+      url: "/storybook-react-login-screen/mockServiceWorker.js",
+    };
+  };
+}
 initialize(options);
 
 // Provide the MSW addon decorator globally
