@@ -21,12 +21,18 @@ export const LoggedIn: StoryObj = {
   parameters:{
     msw: {
       handlers: [
+        rest.post('https://lostvoyager.github.io/storybook-react-login-screen/sessions', (req, res, ctx)=>
+        {
+          return res(ctx.json({
+            message: 'Login OK'
+          }))
+        }),
         rest.post('/sessions', (req, res, ctx)=>
         {
           return res(ctx.json({
             message: 'Login OK'
           }))
-        })
+        }),
       ],
     },
   },
